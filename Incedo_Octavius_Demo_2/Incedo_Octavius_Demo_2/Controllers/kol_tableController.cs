@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using Incedo_Octavius_Demo_2.Data;
 using Incedo_Octavius_Demo_2.Models;
 using MySql.Data.MySqlClient;
+using OfficeDevPnP.Core.Diagnostics.Tree;
 
 namespace Incedo_Octavius_Demo_2.Controllers
 {
@@ -18,9 +19,11 @@ namespace Incedo_Octavius_Demo_2.Controllers
         private Incedo_Octavius_Demo_2_kol_table_Context db = new Incedo_Octavius_Demo_2_kol_table_Context();
 
         // GET: kol_table
+        //public ActionResult KOL_Degree()
         public ActionResult Index()
         {
             List<kol_table> kols = new List<kol_table>();
+            //KOL_With_Degree_List kolList = new KOL_With_Degree_List();
             string constr = ConfigurationManager.ConnectionStrings["Incedo_Octavius_Demo_2_kol_table_Context"].ConnectionString;
             using (MySqlConnection con = new MySqlConnection(constr))
             {
@@ -55,6 +58,46 @@ namespace Incedo_Octavius_Demo_2.Controllers
                 }
             }
 
+            /*// Stored Procedures
+            using (MySqlConnection dbConnection = new MySqlConnection(constr))
+            {
+                try
+                {
+                    dbConnection.Open();
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.Connection = dbConnection;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandText = "KOL_With_Degree";
+
+                    MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
+                    DataSet dataSetObject = new DataSet();
+                    dataAdapter.Fill(dataSetObject);
+
+                    if(dataSetObject.Tables[0].Rows.Count>0)
+                    {
+                        for(int iCout = 0;iCout<dataSetObject.Tables[0].Rows.Count;iCout++)
+                        {
+                            KOL_With_Degree kolDegreeList = new KOL_With_Degree();
+                            kolDegreeList.FirstName = dataSetObject.Tables[0].Rows[iCout]["First_Name"].ToString();
+                            kolDegreeList.LastName = dataSetObject.Tables[0].Rows[iCout]["Last_Name"].ToString();
+                            kolDegreeList.DegreeID = Convert.ToInt32(dataSetObject.Tables[0].Rows[iCout]["DegreeID"]);
+                            kolDegreeList.Degree = dataSetObject.Tables[0].Rows[iCout]["Degree"].ToString();
+                            kolDegreeList.SpecialtyID = Convert.ToInt32(dataSetObject.Tables[0].Rows[iCout]["SpecialtyID"]);
+                            kolDegreeList.SpecialityName = dataSetObject.Tables[0].Rows[iCout]["SpecialityName"].ToString();
+
+                            kolList.kol_degreeList.Add(kolDegreeList);
+                        }
+                    }
+                }
+                catch (Exception Ex)
+                {
+
+                    Console.WriteLine("Error : " + Ex.Message);
+                }
+
+            }*/
+
+            //return View(kolList);
             return View(kols);
             //return View(db.KOL_DATA.ToList());
         }
