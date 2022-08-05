@@ -323,6 +323,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BusinessUserDegreeModelsController.cs" />
     <Compile Include="Controllers\BusinessUserHomeController.cs" />
+    <Compile Include="Controllers\BusinessUserSpecialtyModelsController.cs" />
     <Compile Include="Controllers\degree_master_tableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KOLController.cs" />
@@ -333,6 +334,7 @@
     <Compile Include="Controllers\kol_tableController.cs" />
     <Compile Include="Controllers\KOL_With_DegreeController.cs" />
     <Compile Include="Data\Incedo_Octavius_Demo_2Context.cs" />
+    <Compile Include="Data\Incedo_Octavius_Demo_2_BU_Spec_Context.cs" />
     <Compile Include="Data\Incedo_Octavius_Demo_2_degree_master_table_Context.cs" />
     <Compile Include="Data\Incedo_Octavius_Demo_2_KOL_DATA_Context.cs" />
     <Compile Include="Data\Incedo_Octavius_Demo_2_kol_degree_map_table_Context.cs" />
@@ -344,6 +346,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\BusinessUserDegreeModel.cs" />
+    <Compile Include="Models\BusinessUserSpecialtyModel.cs" />
     <Compile Include="Models\DegreeModel.cs" />
     <Compile Include="Models\degree_master_table.cs" />
     <Compile Include="Models\KOL.cs" />
@@ -354,6 +357,7 @@
     <Compile Include="Models\kol_table.cs" />
     <Compile Include="Models\KOL_With_Degree.cs" />
     <Compile Include="Models\KOL_With_Degree_List.cs" />
+    <Compile Include="Models\SpecialtyModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -470,6 +474,11 @@
     <Content Include="Views\BusinessUserDegreeModels\Details.cshtml" />
     <Content Include="Views\BusinessUserDegreeModels\Edit.cshtml" />
     <Content Include="Views\BusinessUserDegreeModels\Index.cshtml" />
+    <Content Include="Views\BusinessUserSpecialtyModels\Create.cshtml" />
+    <Content Include="Views\BusinessUserSpecialtyModels\Delete.cshtml" />
+    <Content Include="Views\BusinessUserSpecialtyModels\Details.cshtml" />
+    <Content Include="Views\BusinessUserSpecialtyModels\Edit.cshtml" />
+    <Content Include="Views\BusinessUserSpecialtyModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
