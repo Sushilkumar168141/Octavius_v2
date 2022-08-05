@@ -321,11 +321,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BusinessUserDegreeModelsController.cs" />
+    <Compile Include="Controllers\BusinessUserHomeController.cs" />
     <Compile Include="Controllers\degree_master_tableController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KOLController.cs" />
     <Compile Include="Controllers\KOL_DATAController.cs" />
     <Compile Include="Controllers\kol_degree_map_tableController.cs" />
+    <Compile Include="Controllers\KOL_DetailsController.cs" />
     <Compile Include="Controllers\KOL_ImageController.cs" />
     <Compile Include="Controllers\kol_tableController.cs" />
     <Compile Include="Controllers\KOL_With_DegreeController.cs" />
@@ -335,13 +338,17 @@
     <Compile Include="Data\Incedo_Octavius_Demo_2_kol_degree_map_table_Context.cs" />
     <Compile Include="Data\Incedo_Octavius_Demo_2_kol_table_Context.cs" />
     <Compile Include="Data\Incedo_Octavius_Demo_2_KOL_With_Degree_Context.cs" />
+    <Compile Include="Data\Incedo_Octavius_Demo_2_Rules_BU_Deg_Context.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\BusinessUserDegreeModel.cs" />
+    <Compile Include="Models\DegreeModel.cs" />
     <Compile Include="Models\degree_master_table.cs" />
     <Compile Include="Models\KOL.cs" />
     <Compile Include="Models\KOL_DATA.cs" />
     <Compile Include="Models\kol_degree_map_table.cs" />
+    <Compile Include="Models\KOL_Details.cs" />
     <Compile Include="Models\KOL_Image.cs" />
     <Compile Include="Models\kol_table.cs" />
     <Compile Include="Models\KOL_With_Degree.cs" />
@@ -454,6 +461,14 @@
     <Content Include="Views\KOL_With_Degree\Edit.cshtml" />
     <Content Include="Views\KOL_With_Degree\Index.cshtml" />
     <Content Include="Views\KOL_Image\Index.cshtml" />
+    <Content Include="Views\KOL_Details\Index.cshtml" />
+    <Content Include="Views\KOL_Details\Details.cshtml" />
+    <Content Include="Views\BusinessUserHome\Index.cshtml" />
+    <Content Include="Views\BusinessUserDegreeModels\Create.cshtml" />
+    <Content Include="Views\BusinessUserDegreeModels\Delete.cshtml" />
+    <Content Include="Views\BusinessUserDegreeModels\Details.cshtml" />
+    <Content Include="Views\BusinessUserDegreeModels\Edit.cshtml" />
+    <Content Include="Views\BusinessUserDegreeModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,10 +1,12 @@
-﻿using Incedo_Octavius_Demo_2.Models;
+﻿using Incedo_Octavius_Demo_2.Data;
+using Incedo_Octavius_Demo_2.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
@@ -12,6 +14,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
 {
     public class KOL_ImageController : Controller
     {
+        private Incedo_Octavius_Demo_2_kol_degree_map_table_Context db = new Incedo_Octavius_Demo_2_kol_degree_map_table_Context();
         // GET: KOL_Image
         public ActionResult Index()
         {
@@ -37,6 +40,7 @@ namespace Incedo_Octavius_Demo_2.Controllers
                         for (int iCout = 0; iCout < dataSetObject.Tables[0].Rows.Count; iCout++)
                         {
                             KOL_Image kolImage= new KOL_Image();
+                            kolImage.kolID = Convert.ToInt32(dataSetObject.Tables[0].Rows[iCout]["kolID"]);
                             kolImage.First_Name = dataSetObject.Tables[0].Rows[iCout]["First_Name"].ToString();
                             kolImage.Last_Name = dataSetObject.Tables[0].Rows[iCout]["Last_Name"].ToString();
                             kolImage.Image_URL = dataSetObject.Tables[0].Rows[iCout]["Image_Link"].ToString();
@@ -55,5 +59,9 @@ namespace Incedo_Octavius_Demo_2.Controllers
 
             return View(kolNameImageList);
         }
+
+        
+
+
     }
 }
